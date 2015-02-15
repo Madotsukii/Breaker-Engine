@@ -15,4 +15,4 @@ along with Breaker Engine.  If not, see <http://www.gnu.org/licenses/>.
 
 ================================================================================
 
-This is like, a game engine, or something, man.
+This is like, a game engine, or something, mang.
