@@ -1,0 +1,66 @@
+#Copyright (C) 2015 <Madotsuki>
+
+#This file is part of Breaker Engine.
+
+#Breaker Engine is free software: you can redistribute it and/or modify
+#it under the terms of the GNU Affero General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+
+#Breaker Engine is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU Affero General Public License for more details.
+
+#You should have received a copy of the GNU Affero General Public License
+#along with Breaker Engine.  If not, see <http://www.gnu.org/licenses/>.
+
+SOURCES=
+
+#Everything but ARCH is nearly impossible to get info on without going through
+#silly hoops, just edit this file yourself or use the arguments..
+ARCH=$(uname -m)
+VENDOR=pc
+SYS=linux
+ABI=elf
+
+for i in $(find src -type f -name '*.cpp'); do
+	echo Adding to Makefile sources: $i
+	SOURCES="$i $SOURCES"
+done
+
+while getopts h:a:v:s:b: opt; do
+	case $opt in
+		h)
+			echo "-h = Prints this out
+			-a = Architecture
+			-v = Vendor
+			-s = System
+			-b = ABI";;
+		
+		a)
+			ARCH=$OPTARG;;
+		
+		v)
+			VENDOR=$OPTARG;;
+		
+		s)
+			SYS=$OPTARG;;
+		
+		b)
+			ABI=$OPTARG;;
+	esac
+done
+
+shift $((OPTIND - 1))
+
+sed -i "0,/SOURCES=/{s|SOURCES=.*|SOURCES=$SOURCES|}" Makefile
+sed -i "0,/SOURCES=/{s|SOURCES=.*|SOURCES=$SOURCES|}" Makefile.debug
+sed -i "0,/ARCH=/{s|ARCH=.*|ARCH=$ARCH|}" Makefile
+sed -i "0,/ARCH=/{s|ARCH=.*|ARCH=$ARCH|}" Makefile.debug
+sed -i "0,/VENDOR=/{s|VENDOR=.*|VENDOR=$VENDOR|}" Makefile
+sed -i "0,/VENDOR=/{s|VENDOR=.*|VENDOR=$VENDOR|}" Makefile.debug
+sed -i "0,/SYS=/{s|SYS=.*|SYS=$SYS|}" Makefile
+sed -i "0,/SYS=/{s|SYS=.*|SYS=$SYS|}" Makefile.debug
+sed -i "0,/ABI=/{s|ABI=.*|ABI=$ABI|}" Makefile
+sed -i "0,/ABI=/{s|ABI=.*|ABI=$ABI|}" Makefile.debug
