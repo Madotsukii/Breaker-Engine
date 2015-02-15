@@ -1,4 +1,4 @@
-Copyright (C) 2015 <Madotsuki> <madotsuki@redchan.it>
+Copyright (C) 2015 <Madotsuki (madotsuki@redchan.it)>
 
 Breaker Engine is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
