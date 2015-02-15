@@ -1,0 +1,3 @@
+// The configured options and settings for BreakerEngine
+#define BreakerEngine_VERSION_MAJOR @BreakerEngine_VERSION_MAJOR@
+#define BreakerEngine_VERSION_MINOR @BreakerEngine_VERSION_MINOR@

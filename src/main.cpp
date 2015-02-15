@@ -20,18 +20,27 @@ along with Breaker Engine.  If not, see <http://www.gnu.org/licenses/>.
 #include <iostream>
 #include <string>
 
-//#include "core/io/file.h"
+//CMake crap
+#include "config.h"
+
+//Source includes
+#include "core/io/file.h"
 
 //Entry point, decides what to do and does it
 int main(const int argc, const char** argv)
 {
+	//TODO: Open README.md and store in (string)variable
 	//Get passed-in arguments and decide what to do based off of them
 	for (int i = 0; i < argc; i++)
 	{
-		if (std::string(argv[i]) == "-h")
-			std::cout << "test";
-		
-		std::cout << argv[i] << std::endl;
+		//Prints README.md and general/command information
+		if (std::string(argv[i]) == "-h" || std::string(argv[i]) == "--help")
+			//TODO: Print out README.md
+			std::cout << "-h --help | Prints this out\n-v --version | Prints the version" << std::endl;
+		//Prints README.md and the version
+		else if (std::string(argv[i]) == "-v" || std::string(argv[i]) == "--version")
+			std::cout << "Breaker Engine v" << BreakerEngine_VERSION_MAJOR <<
+				"." << BreakerEngine_VERSION_MINOR << std::endl;
 	}
 	
 	//Implement settings file at some point
