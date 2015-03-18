@@ -1,8 +1,8 @@
--Description-
+Description
 ================================================================================
 This is like, a game engine, or something, man.
 
--License-
+License
 ================================================================================
 Copyright © 2015 Madotsuki \<<madotsuki@redchan.it>\>
 
