@@ -1,3 +1,7 @@
+This is like, a game engine, or something, man.
+
+================================================================================
+
 Copyright © 2015 Madotsuki \<<madotsuki@redchan.it>\>
 
 This software is provided 'as-is', without any express or implied warranty. In
@@ -17,7 +21,3 @@ the following restrictions:
 		misrepresented as being the original software.
 
 	3. This notice may not be removed or altered from any source distribution.
-
-================================================================================
-
-This is like, a game engine, or something, man.
