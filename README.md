@@ -1,5 +1,4 @@
 This is like, a game engine, or something, man.
-
 ================================================================================
 
 Copyright © 2015 Madotsuki \<<madotsuki@redchan.it>\>
