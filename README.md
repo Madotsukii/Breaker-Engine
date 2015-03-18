@@ -1,6 +1,9 @@
-This is like, a game engine, or something, man.
+-Description-
 ================================================================================
+This is like, a game engine, or something, man.
 
+-License-
+================================================================================
 Copyright © 2015 Madotsuki \<<madotsuki@redchan.it>\>
 
 This software is provided 'as-is', without any express or implied warranty. In
