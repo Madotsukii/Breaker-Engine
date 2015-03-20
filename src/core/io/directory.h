@@ -19,3 +19,36 @@ the following restrictions:
 
 	3. This notice may not be removed or altered from any source distribution.
 */
+
+/* Directory manipulation */
+
+#ifndef DIRECTORY_H
+#define DIRECTORY_H
+
+#include <string>
+
+// Directory class, a container for information relating to said directory
+class Directory
+{
+public:
+	Directory();									// Finds and sets default
+													// path (engine root)
+	
+	std::string getDirPath();						// Get directory path
+	std::string getDirName();						// Get directory name
+	
+	std::string setDir(std::string path);			/* Find and set directory
+													from current directory */
+	std::string setDirFromRoot(std::string path);	/* Find and set directory
+													from (engine) root */
+	
+	bool exists();									// Check if directory exists
+	
+	
+
+private:
+	std::string path;
+	std::string name;
+};
+
+#endif // DIRECTORY_H

@@ -20,17 +20,20 @@ the following restrictions:
 	3. This notice may not be removed or altered from any source distribution.
 */
 
+/* Entry point, starts everything up and accesses the main loop */
+
 #include <iostream>
-#include <string>
 
-//CMake crap
 #include "config.h"
-
-//Source includes
+#include "core/threadmux.h"
+#include "core/logging/log.h"
 #include "core/io/file.h"
 
+ThreadMux threadMux;
+Log systemLog = Log("System");
+
 //Entry point, decides what to do and does it
-int main(const int argc, const char** argv)
+int main(int argc, char** argv)
 {
 	//TODO: Open README.md and store in (string)variable
 	//Get passed-in arguments and decide what to do based off of them
@@ -38,16 +41,28 @@ int main(const int argc, const char** argv)
 	{
 		//Prints README.md and general/command information
 		if (std::string(argv[i]) == "-h" || std::string(argv[i]) == "--help")
+		{
 			//TODO: Print out README.md
-			std::cout << "Usage: BreakerEngine [OPTIONS] FILE\n\n" <<
-				"Option	Long option	Meaning\n" <<
-				" -h	--help		Show this message\n" <<
-				" -v	--version	Prints the program version\n";
+			systemLog.add("Usage: BreakerEngine [OPTIONS]\n\n"
+				"Option	Long option	Meaning\n"
+				" -h	--help		Show this message and exits\n"
+				" -v	--version	Prints the executable version and exits",
+				true);
+			
+			exit(0); //TODO: Make exception system later to replace
+		}
 		//Prints the program version
 		else if (std::string(argv[i]) == "-v" ||
-				std::string(argv[i]) == "--version")
-			std::cout << "Breaker Engine v" << BreakerEngine_VERSION_MAJOR <<
-				"." << BreakerEngine_VERSION_MINOR << std::endl;
+			std::string(argv[i]) == "--version")
+		{
+			std::string content = "Breaker Engine v" +
+				std::to_string(BreakerEngine_VERSION_MAJOR) + "." +
+				std::to_string(BreakerEngine_VERSION_MINOR);
+			
+			systemLog.add(content, true);
+			
+			exit(0);
+		}
 	}
 	
 	//Implement settings file at some point

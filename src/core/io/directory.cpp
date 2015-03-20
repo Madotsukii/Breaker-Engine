@@ -20,4 +20,44 @@ the following restrictions:
 	3. This notice may not be removed or altered from any source distribution.
 */
 
+#include <dirent.h>
+
 #include "directory.h"
+
+Directory::Directory()
+{
+	// GNU/Linux specific code
+	#ifdef __gnu_linux__
+	
+	#endif
+	
+	// Windows specific code
+	#ifdef _WIN32
+	
+	#endif
+}
+
+std::string Directory::getDirPath()
+{
+	return "";
+}
+
+std::string Directory::getDirName()
+{
+	return "";
+}
+
+std::string Directory::setDir(std::string path)
+{
+	return "";
+}
+
+std::string Directory::setDirFromRoot(std::string path)
+{
+	return "";
+}
+
+bool Directory::exists()
+{
+	return false;
+}

@@ -19,3 +19,19 @@ the following restrictions:
 
 	3. This notice may not be removed or altered from any source distribution.
 */
+
+/* File manipulation */
+
+#ifndef FILE_H
+#define FILE_H
+
+#include "directory.h"
+
+class File : public Directory
+{
+public:
+
+private:
+};
+
+#endif // FILE_H
