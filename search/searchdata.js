@@ -1,21 +1,27 @@
 var indexSectionsWithContent =
 {
-  0: "cdflt",
+  0: "abcdfgiltw~",
   1: "cdflt",
-  2: "d"
+  2: "b",
+  3: "agiltw~",
+  4: "d"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "pages"
+  2: "namespaces",
+  3: "functions",
+  4: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Pages"
+  2: "Namespaces",
+  3: "Functions",
+  4: "Pages"
 };
 

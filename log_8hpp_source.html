@@ -49,6 +49,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -140,94 +141,102 @@ $(document).ready(function(){initNavTree('log_8hpp_source.html','');});
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;../thread.hpp&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//#include &quot;../io/file.hpp&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_breaker.html">Breaker</a></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">static</span> std::mutex log_mutex;                <span class="comment">// Mutex lock</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">inline</span> std::string <span class="keyword">const</span>&amp; to_string(std::string <span class="keyword">const</span>&amp; s) {<span class="keywordflow">return</span> s;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// Log class, for logging purposes</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_breaker_1_1_log.html">   40</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_breaker_1_1_log.html">Log</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="class_breaker_1_1_log.html">Log</a>(std::string name, <span class="keywordtype">bool</span> stream);     <span class="comment">// Constructor</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;              <span class="comment">// Add content to log</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> add(<span class="keywordtype">bool</span> prefix, <span class="keywordtype">bool</span> endLine, Args... args)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            std::string content;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (prefix)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                content += <span class="charliteral">&#39;[&#39;</span> + name + <span class="stringliteral">&quot;]&gt; &quot;</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">using</span> Breaker::to_string;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keyword">using</span> std::to_string;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">int</span> unpack[]{0, (content += to_string(args), 0)...};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span><span class="keyword">&gt;</span>(unpack);          <span class="comment">// Avoids &quot;unused variable&quot;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (endLine)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                content += <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespace_breaker.html">   36</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_breaker.html">Breaker</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">static</span> std::mutex log_mutex;                </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">inline</span> std::string <span class="keyword">const</span>&amp; to_string(std::string <span class="keyword">const</span>&amp; s) {<span class="keywordflow">return</span> s;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Log class, for logging purposes</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_breaker_1_1_log.html">   43</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_breaker_1_1_log.html">Log</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="class_breaker_1_1_log.html#a37ee5362f1b9c464ccdaddea83253766">Log</a>(std::string name, <span class="keywordtype">bool</span> stream);     </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;              </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_breaker_1_1_log.html#a4fdb6ea858bfea87071d4cfe484ba6e9">   49</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_breaker_1_1_log.html#a4fdb6ea858bfea87071d4cfe484ba6e9">add</a>(<span class="keywordtype">bool</span> prefix, <span class="keywordtype">bool</span> endLine, Args... args)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            std::string content;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">if</span> (prefix)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                content += <span class="charliteral">&#39;[&#39;</span> + name + <span class="stringliteral">&quot;]&gt; &quot;</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">using</span> Breaker::to_string;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keyword">using</span> std::to_string;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordtype">int</span> unpack[]{0, (content += to_string(args), 0)...};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span><span class="keyword">&gt;</span>(unpack);          </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            log_mutex.lock();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            log.push_back(content);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            std::cout &lt;&lt; content;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            log_mutex.unlock();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> (streamToFile)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                append();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">void</span> add(<span class="keywordtype">bool</span> prefix, Args... args)     <span class="comment">// ..prefix</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            add(prefix, <span class="keyword">true</span>, args...);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> add(Args... args)                  <span class="comment">// ..prefix and endLine</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            add(<span class="keyword">true</span>, <span class="keyword">true</span>, args...);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> write();                           <span class="comment">// Write content to log file</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        std::vector&lt;std::string&gt; getLog();      <span class="comment">// Get log contents</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        std::string getName();                  <span class="comment">// Get log name</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">//Breaker::File getFile();              // Get log file</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> loop(<a class="code" href="class_breaker_1_1_log.html">Breaker::Log</a> log)      <span class="comment">// Thread loop</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            log.add(<span class="stringliteral">&quot;-&gt;[&quot;</span>, log.getName(), <span class="stringliteral">&quot;]&lt;- log initialized&quot;</span>);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="comment">/*while (!endOfTheLine)</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">            {</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">            }*/</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        std::vector&lt;std::string&gt; log;           <span class="comment">// Contents of the log</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">//TODO: Implement File</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">//Breaker::File file;</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        std::string name;                       <span class="comment">// Name of the log</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">bool</span> streamToFile;                      <span class="comment">// Stream to file?</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">void</span> append();                          <span class="comment">// Append content to log file</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    };</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_breaker_1_1_log.html">Breaker::Log</a> systemLog;                  <span class="comment">// System log</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif // LOG_H</span></div>
-<div class="ttc" id="namespace_breaker_html"><div class="ttname"><a href="namespace_breaker.html">Breaker</a></div><div class="ttdef"><b>Definition:</b> log.hpp:33</div></div>
-<div class="ttc" id="class_breaker_1_1_log_html"><div class="ttname"><a href="class_breaker_1_1_log.html">Breaker::Log</a></div><div class="ttdef"><b>Definition:</b> log.hpp:40</div></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> (endLine)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                content += <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            log_mutex.lock();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            log.push_back(content);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            std::cout &lt;&lt; content;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            log_mutex.unlock();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (streamToFile)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                append();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_breaker_1_1_log.html#a88e1d45e641642af1837944f94bcf68b">   74</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_breaker_1_1_log.html#a88e1d45e641642af1837944f94bcf68b">add</a>(<span class="keywordtype">bool</span> prefix, Args... args)     </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="class_breaker_1_1_log.html#a4fdb6ea858bfea87071d4cfe484ba6e9">add</a>(prefix, <span class="keyword">true</span>, args...);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_breaker_1_1_log.html#acaac5e63f55d5fcd216e11ec40f55771">   80</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_breaker_1_1_log.html#acaac5e63f55d5fcd216e11ec40f55771">add</a>(Args... args)                  </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="class_breaker_1_1_log.html#a4fdb6ea858bfea87071d4cfe484ba6e9">add</a>(<span class="keyword">true</span>, <span class="keyword">true</span>, args...);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_breaker_1_1_log.html#add78de0f5ac86938a15d56530b572cf7">write</a>();                           </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        std::vector&lt;std::string&gt; <a class="code" href="class_breaker_1_1_log.html#a04b2868201c939606c145ecb00a140c8">getLog</a>();      </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        std::string <a class="code" href="class_breaker_1_1_log.html#a9568a5d0915d81054054dde3f2e9e45b">getName</a>();                  </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">//Breaker::File getFile();              ///&lt; Get log file</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_breaker_1_1_log.html#aed7f56d0de8e4e1877b8a7c0518bbd85">   91</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_breaker_1_1_log.html#aed7f56d0de8e4e1877b8a7c0518bbd85">loop</a>(<a class="code" href="class_breaker_1_1_log.html">Breaker::Log</a> log)      </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            log.<a class="code" href="class_breaker_1_1_log.html#a4fdb6ea858bfea87071d4cfe484ba6e9">add</a>(<span class="stringliteral">&quot;-&gt;[&quot;</span>, log.<a class="code" href="class_breaker_1_1_log.html#a9568a5d0915d81054054dde3f2e9e45b">getName</a>(), <span class="stringliteral">&quot;]&lt;- log initialized&quot;</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="comment">/*while (!endOfTheLine)</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">            {</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">            }*/</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        std::vector&lt;std::string&gt; log;           </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">//TODO: Implement File</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">//Breaker::File file;</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        std::string name;                       </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">bool</span> streamToFile;                      </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">void</span> append();                          </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    };</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">extern</span> <a class="code" href="class_breaker_1_1_log.html">Breaker::Log</a> systemLog;                  </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif // LOG_H</span></div>
+<div class="ttc" id="class_breaker_1_1_log_html_a37ee5362f1b9c464ccdaddea83253766"><div class="ttname"><a href="class_breaker_1_1_log.html#a37ee5362f1b9c464ccdaddea83253766">Breaker::Log::Log</a></div><div class="ttdeci">Log(std::string name, bool stream)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> log.cpp:27</div></div>
+<div class="ttc" id="class_breaker_1_1_log_html_add78de0f5ac86938a15d56530b572cf7"><div class="ttname"><a href="class_breaker_1_1_log.html#add78de0f5ac86938a15d56530b572cf7">Breaker::Log::write</a></div><div class="ttdeci">void write()</div><div class="ttdoc">Write content to log file. </div><div class="ttdef"><b>Definition:</b> log.cpp:36</div></div>
+<div class="ttc" id="class_breaker_1_1_log_html_a88e1d45e641642af1837944f94bcf68b"><div class="ttname"><a href="class_breaker_1_1_log.html#a88e1d45e641642af1837944f94bcf68b">Breaker::Log::add</a></div><div class="ttdeci">void add(bool prefix, Args...args)</div><div class="ttdef"><b>Definition:</b> log.hpp:74</div></div>
+<div class="ttc" id="namespace_breaker_html"><div class="ttname"><a href="namespace_breaker.html">Breaker</a></div><div class="ttdoc">Breaker Engine namespace. </div><div class="ttdef"><b>Definition:</b> log.hpp:36</div></div>
+<div class="ttc" id="class_breaker_1_1_log_html_aed7f56d0de8e4e1877b8a7c0518bbd85"><div class="ttname"><a href="class_breaker_1_1_log.html#aed7f56d0de8e4e1877b8a7c0518bbd85">Breaker::Log::loop</a></div><div class="ttdeci">static void loop(Breaker::Log log)</div><div class="ttdef"><b>Definition:</b> log.hpp:91</div></div>
+<div class="ttc" id="class_breaker_1_1_log_html_a4fdb6ea858bfea87071d4cfe484ba6e9"><div class="ttname"><a href="class_breaker_1_1_log.html#a4fdb6ea858bfea87071d4cfe484ba6e9">Breaker::Log::add</a></div><div class="ttdeci">void add(bool prefix, bool endLine, Args...args)</div><div class="ttdoc">< Add content to log </div><div class="ttdef"><b>Definition:</b> log.hpp:49</div></div>
+<div class="ttc" id="class_breaker_1_1_log_html"><div class="ttname"><a href="class_breaker_1_1_log.html">Breaker::Log</a></div><div class="ttdef"><b>Definition:</b> log.hpp:43</div></div>
+<div class="ttc" id="class_breaker_1_1_log_html_a9568a5d0915d81054054dde3f2e9e45b"><div class="ttname"><a href="class_breaker_1_1_log.html#a9568a5d0915d81054054dde3f2e9e45b">Breaker::Log::getName</a></div><div class="ttdeci">std::string getName()</div><div class="ttdoc">Get log name. </div><div class="ttdef"><b>Definition:</b> log.cpp:47</div></div>
+<div class="ttc" id="class_breaker_1_1_log_html_a04b2868201c939606c145ecb00a140c8"><div class="ttname"><a href="class_breaker_1_1_log.html#a04b2868201c939606c145ecb00a140c8">Breaker::Log::getLog</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getLog()</div><div class="ttdoc">Get log contents. </div><div class="ttdef"><b>Definition:</b> log.cpp:42</div></div>
+<div class="ttc" id="class_breaker_1_1_log_html_acaac5e63f55d5fcd216e11ec40f55771"><div class="ttname"><a href="class_breaker_1_1_log.html#acaac5e63f55d5fcd216e11ec40f55771">Breaker::Log::add</a></div><div class="ttdeci">void add(Args...args)</div><div class="ttdef"><b>Definition:</b> log.hpp:80</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a class="el" href="dir_c0dfe31bcfc6a275162cd711e180e219.html">logging</a></li><li class="navelem"><b>log.hpp</b></li>
-    <li class="footer">Generated on Sat Mar 28 2015 01:09:34 for Breaker Engine by
+    <li class="footer">Generated on Sat Mar 28 2015 01:23:48 for Breaker Engine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>
