@@ -1,0 +1,3 @@
+# Might wanna have doxygen installed...
+
+doxygen Doxyfile

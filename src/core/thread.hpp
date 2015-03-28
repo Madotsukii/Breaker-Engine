@@ -296,12 +296,27 @@ namespace Breaker
         *	@see command_mutex
         *	@see queue
         */
-        std::vector<std::string> getQueue();	///<  Get command queue
-        std::string getLast();					///<  Get last command
+        std::vector<std::string> getQueue();
+
+        /**
+        *	Get last command.
+        *	Get last command from command queue.
+        *	@see queue
+        */
+        std::string getLast();
 
     private:
-        std::mutex command_mutex;				///< Mutex lock
-        std::vector<std::string> queue;			///< Command queue
+        /**
+        *	Command mutex.
+        *	Locks the current thread and unlocks to prevent race conditions.
+        */
+        std::mutex command_mutex;
+
+        /**
+        *	Command queue.
+        *	Queue of commands to execute.
+        */
+        std::vector<std::string> queue;
     };
 }
 
