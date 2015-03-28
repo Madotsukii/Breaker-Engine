@@ -1,6 +1,6 @@
 Description
 ================================================================================
-Multithreaded game engine, or something, lol.
+Multithreaded game engine, or something, lol
 
 License
 ================================================================================
