@@ -1,4 +1,4 @@
 var namespaces =
 [
-    [ "Breaker", "namespace_breaker.html", null ]
+    [ "Breaker", "d9/d34/namespace_breaker.html", null ]
 ];
