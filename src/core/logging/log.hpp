@@ -35,80 +35,80 @@ the following restrictions:
 */
 namespace Breaker
 {
-static std::mutex log_mutex;				///< Mutex lock
+    static std::mutex log_mutex;				///< Mutex lock
 
-inline std::string const& to_string(std::string const& s) {
-    return s;
-}
+    inline std::string const& to_string(std::string const& s) {
+        return s;
+    }
 
 // Log class, for logging purposes
-class Log
-{
-public:
-    Log(std::string name, bool stream);		///< Constructor
-
-    template<typename... Args>				///< Add content to log
-    void add(bool prefix, bool endLine, Args... args)
+    class Log
     {
-        std::string content;
+    public:
+        Log(std::string name, bool stream);		///< Constructor
 
-        if (prefix)
-            content += '[' + name + "]> ";
-
-        using Breaker::to_string;
-        using std::to_string;
-        int unpack[] {0, (content += to_string(args), 0)...};
-        static_cast<void>(unpack);			///< Avoids "unused variable"
-
-        if (endLine)
-            content += '\n';
-
-        log_mutex.lock();
-        log.push_back(content);
-        std::cout << content;
-        log_mutex.unlock();
-
-        if (streamToFile)
-            append();
-    }
-
-    template<typename... Args>
-    void add(bool prefix, Args... args)		///< ..prefix
-    {
-        add(prefix, true, args...);
-    }
-
-    template<typename... Args>
-    void add(Args... args)					///< ..prefix and endLine
-    {
-        add(true, true, args...);
-    }
-
-    void write();							///< Write content to log file
-
-    std::vector<std::string> getLog();		///< Get log contents
-    std::string getName();					///< Get log name
-    //Breaker::File getFile();				///< Get log file
-
-    static void loop(Breaker::Log log)		///< Thread loop
-    {
-        log.add("->[", log.getName(), "]<- log initialized");
-
-        /*while (!endOfTheLine)
+        template<typename... Args>				///< Add content to log
+        void add(bool prefix, bool endLine, Args... args)
         {
+            std::string content;
 
-        }*/
-    }
+            if (prefix)
+                content += '[' + name + "]> ";
 
-private:
-    std::vector<std::string> log;			///< Contents of the log
-    //TODO: Implement File
-    //Breaker::File file;
-    std::string name;						///< Name of the log
-    bool streamToFile;						///< Stream to file?
+            using Breaker::to_string;
+            using std::to_string;
+            int unpack[] {0, (content += to_string(args), 0)...};
+            static_cast<void>(unpack);			///< Avoids "unused variable"
 
-    void append();							///< Append content to log file
-};
+            if (endLine)
+                content += '\n';
+
+            log_mutex.lock();
+            log.push_back(content);
+            std::cout << content;
+            log_mutex.unlock();
+
+            if (streamToFile)
+                append();
+        }
+
+        template<typename... Args>
+        void add(bool prefix, Args... args)		///< ..prefix
+        {
+            add(prefix, true, args...);
+        }
+
+        template<typename... Args>
+        void add(Args... args)					///< ..prefix and endLine
+        {
+            add(true, true, args...);
+        }
+
+        void write();							///< Write content to log file
+
+        std::vector<std::string> getLog();		///< Get log contents
+        std::string getName();					///< Get log name
+        //Breaker::File getFile();				///< Get log file
+
+        static void loop(Breaker::Log log)		///< Thread loop
+        {
+            log.add("->[", log.getName(), "]<- log initialized");
+
+            /*while (!endOfTheLine)
+            {
+
+            }*/
+        }
+
+    private:
+        std::vector<std::string> log;			///< Contents of the log
+        //TODO: Implement File
+        //Breaker::File file;
+        std::string name;						///< Name of the log
+        bool streamToFile;						///< Stream to file?
+
+        void append();							///< Append content to log file
+    };
 }
 
 extern Breaker::Log systemLog;					///< System log
