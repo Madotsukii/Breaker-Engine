@@ -22,7 +22,7 @@ the following restrictions:
 
 #include <dirent.h>
 
-#include "directory.h"
+#include "directory.hpp"
 
 Directory::Directory()
 {

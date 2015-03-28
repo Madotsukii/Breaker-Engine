@@ -20,36 +20,18 @@ the following restrictions:
 	3. This notice may not be removed or altered from any source distribution.
 */
 
-/* Logging */
+/* File manipulation */
 
-#ifndef LOG_H
-#define LOG_H
+#ifndef FILE_H
+#define FILE_H
 
-#include <string>
-#include <vector>
+#include "directory.hpp"
 
-#include "../io/file.h"
-
-// Log class, for logging purposes
-class Log
+class File : public Directory
 {
 public:
-	bool streamToFile = false;				// Continuously stream log to file?
-	
-	Log(const std::string name);			// Create log with name ->[name]<-
-	
-	void add(std::string content, bool endLine);	// Add content to log
-	void _add(std::string content, bool endLine);	// Add content to log
-	void write();							// Write content to log file
 
 private:
-	std::vector<std::string> log;			// Contents of the log
-	//TODO: Implement File
-	//File logFile;
-	
-	void append(bool endLine);				// Append content to log file
 };
 
-extern Log systemLog;
-
-#endif // LOG_H
+#endif // FILE_H

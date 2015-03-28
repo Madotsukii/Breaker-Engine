@@ -20,50 +20,42 @@ the following restrictions:
 	3. This notice may not be removed or altered from any source distribution.
 */
 
-#include <iostream>
-#include <mutex>
+#include "log.hpp"
 
-#include "log.h"
-#include "../threadmux.h"
-
-static std::mutex barrier;				// Mutex barrier to prevent racing
-
-Log::Log(std::string name)
+// Log
+// Public
+Breaker::Log::Log(std::string _name, bool stream) : name(_name),
+	streamToFile(stream)
 {
-	//log(File.setFileFromRoot("/log/" name ".log"));
-	
 	//TODO: If streaming, then stream to file on another thread
+	//logFile.setFileFromRoot("/log/" name ".log");
+	
+	add("->[", getName(), "]<- log created");
 }
 
-void Log::add(std::string content, bool endLine)
+void Breaker::Log::write()
 {
-	threadMux.add("System Log", &Log::_add, content, endLine);
-}
-
-void Log::_add(std::string content, bool endLine)
-{
-	std::lock_guard<std::mutex> lk(barrier);
-	
-	log.push_back(content);
-	
-	std::cout << log.back();
-	
-	if (endLine)
-		std::cout << std::endl;
-	
-	if (streamToFile && endLine)
-		append(true);
-	else if (streamToFile)
-		append(false);
-}
-
-void Log::write()
-{
-	add("[System] Writing system log to [insert file path here]", true);
+	add("Writing system log to [insert file path here]");
 	//TODO: Write to file and insert file path to the above
 }
 
-void Log::append(bool endLine)
+std::vector<std::string> Breaker::Log::getLog()
+{
+	return log;
+}
+
+std::string Breaker::Log::getName()
+{
+	return name;
+}
+
+/*Breaker::File Breaker::Log::getFile()
+{
+	return file;
+}*/
+
+// Private
+void Breaker::Log::append()
 {
 	//TODO: Append to file
 }

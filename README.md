@@ -1,6 +1,6 @@
 Description
 ================================================================================
-This is like, a game engine, or something, man.
+Multithreaded game engine, or something, lol.
 
 License
 ================================================================================
