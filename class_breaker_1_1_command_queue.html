@@ -110,6 +110,7 @@ $(document).ready(function(){initNavTree('class_breaker_1_1_command_queue.html',
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_breaker_1_1_command_queue-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Breaker::CommandQueue Class Reference</div>  </div>
@@ -118,19 +119,132 @@ $(document).ready(function(){initNavTree('class_breaker_1_1_command_queue.html',
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab2db8d9c2f16e8a25bd49ffc8e80358a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2db8d9c2f16e8a25bd49ffc8e80358a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_command_queue.html#ab2db8d9c2f16e8a25bd49ffc8e80358a">add</a> (std::string cmd)</td></tr>
-<tr class="memdesc:ab2db8d9c2f16e8a25bd49ffc8e80358a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add to queue. <br /></td></tr>
+<tr class="memitem:ab2db8d9c2f16e8a25bd49ffc8e80358a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_command_queue.html#ab2db8d9c2f16e8a25bd49ffc8e80358a">add</a> (std::string cmd)</td></tr>
+<tr class="memdesc:ab2db8d9c2f16e8a25bd49ffc8e80358a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add to queue.  <a href="#ab2db8d9c2f16e8a25bd49ffc8e80358a">More...</a><br /></td></tr>
 <tr class="separator:ab2db8d9c2f16e8a25bd49ffc8e80358a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed558c811676c78034ace5ba3ab8e6f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed558c811676c78034ace5ba3ab8e6f9"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_command_queue.html#aed558c811676c78034ace5ba3ab8e6f9">getQueue</a> ()</td></tr>
-<tr class="memdesc:aed558c811676c78034ace5ba3ab8e6f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get command queue. <br /></td></tr>
+<tr class="memitem:aed558c811676c78034ace5ba3ab8e6f9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_command_queue.html#aed558c811676c78034ace5ba3ab8e6f9">getQueue</a> ()</td></tr>
+<tr class="memdesc:aed558c811676c78034ace5ba3ab8e6f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add to queue.  <a href="#aed558c811676c78034ace5ba3ab8e6f9">More...</a><br /></td></tr>
 <tr class="separator:aed558c811676c78034ace5ba3ab8e6f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d4ec3155331a3937a50b4f1aeb43089"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d4ec3155331a3937a50b4f1aeb43089"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_command_queue.html#a3d4ec3155331a3937a50b4f1aeb43089">getLast</a> ()</td></tr>
-<tr class="memdesc:a3d4ec3155331a3937a50b4f1aeb43089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get last command. <br /></td></tr>
+<tr class="memitem:a3d4ec3155331a3937a50b4f1aeb43089"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_command_queue.html#a3d4ec3155331a3937a50b4f1aeb43089">getLast</a> ()</td></tr>
+<tr class="memdesc:a3d4ec3155331a3937a50b4f1aeb43089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get last command.  <a href="#a3d4ec3155331a3937a50b4f1aeb43089">More...</a><br /></td></tr>
 <tr class="separator:a3d4ec3155331a3937a50b4f1aeb43089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a63136551def14ecf39643a5a05ae4ae0"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_command_queue.html#a63136551def14ecf39643a5a05ae4ae0">command_mutex</a></td></tr>
+<tr class="memdesc:a63136551def14ecf39643a5a05ae4ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command mutex.  <a href="#a63136551def14ecf39643a5a05ae4ae0">More...</a><br /></td></tr>
+<tr class="separator:a63136551def14ecf39643a5a05ae4ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79f68d906ea2aa1db21863b11fb482fb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_command_queue.html#a79f68d906ea2aa1db21863b11fb482fb">queue</a></td></tr>
+<tr class="memdesc:a79f68d906ea2aa1db21863b11fb482fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command queue.  <a href="#a79f68d906ea2aa1db21863b11fb482fb">More...</a><br /></td></tr>
+<tr class="separator:a79f68d906ea2aa1db21863b11fb482fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab2db8d9c2f16e8a25bd49ffc8e80358a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Breaker::CommandQueue::add </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>cmd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add to queue. </p>
+<p>Add command to command queue. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_breaker_1_1_command_queue.html#a63136551def14ecf39643a5a05ae4ae0" title="Command mutex. ">command_mutex</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_command_queue.html#a79f68d906ea2aa1db21863b11fb482fb" title="Command queue. ">queue</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3d4ec3155331a3937a50b4f1aeb43089"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Breaker::CommandQueue::getLast </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get last command. </p>
+<p>Get last command from command queue. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_breaker_1_1_command_queue.html#a79f68d906ea2aa1db21863b11fb482fb" title="Command queue. ">queue</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aed558c811676c78034ace5ba3ab8e6f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; Breaker::CommandQueue::getQueue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add to queue. </p>
+<p>Add command to command queue. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_breaker_1_1_command_queue.html#a63136551def14ecf39643a5a05ae4ae0" title="Command mutex. ">command_mutex</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_command_queue.html#a79f68d906ea2aa1db21863b11fb482fb" title="Command queue. ">queue</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a63136551def14ecf39643a5a05ae4ae0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex Breaker::CommandQueue::command_mutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Command mutex. </p>
+<p>Locks the current thread and unlocks to prevent race conditions. </p>
+
+</div>
+</div>
+<a class="anchor" id="a79f68d906ea2aa1db21863b11fb482fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; Breaker::CommandQueue::queue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Command queue. </p>
+<p>Queue of commands to execute. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/core/<a class="el" href="thread_8hpp_source.html">thread.hpp</a></li>
 <li>src/core/thread.cpp</li>
@@ -141,7 +255,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_breaker.html">Breaker</a></li><li class="navelem"><a class="el" href="class_breaker_1_1_command_queue.html">CommandQueue</a></li>
-    <li class="footer">Generated on Sat Mar 28 2015 01:38:16 for Breaker Engine by
+    <li class="footer">Generated on Sat Mar 28 2015 03:26:14 for Breaker Engine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

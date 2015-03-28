@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['thread_5ffunc',['thread_func',['../class_breaker_1_1_thread___pool.html#a2cc279acba059722db82685d43d09f58',1,'Breaker::Thread_Pool']]],
-  ['thread_5fpool',['Thread_Pool',['../class_breaker_1_1_thread___pool.html#af127a7a8c7edf5213f00ef95224f4740',1,'Breaker::Thread_Pool']]],
-  ['thread_5fpool',['Thread_Pool',['../class_breaker_1_1_thread___pool.html',1,'Breaker']]]
+  ['log',['Log',['../class_breaker_1_1_log.html',1,'Breaker']]],
+  ['log',['Log',['../class_breaker_1_1_log.html#a37ee5362f1b9c464ccdaddea83253766',1,'Breaker::Log::Log(std::string name, bool stream)'],['../class_breaker_1_1_log.html#a98c22662330d036f955a310584f6dcdd',1,'Breaker::Log::log()']]],
+  ['log_5fmutex',['log_mutex',['../namespace_breaker.html#aa4cdf1d724f0e329bdae023221153042',1,'Breaker']]],
+  ['loop',['loop',['../class_breaker_1_1_log.html#aed7f56d0de8e4e1877b8a7c0518bbd85',1,'Breaker::Log']]]
 ];

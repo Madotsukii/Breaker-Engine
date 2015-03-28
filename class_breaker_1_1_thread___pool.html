@@ -111,54 +111,543 @@ $(document).ready(function(){initNavTree('class_breaker_1_1_thread___pool.html',
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_breaker_1_1_thread___pool-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Breaker::Thread_Pool Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Thread pool.  
+ <a href="class_breaker_1_1_thread___pool.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="thread_8hpp_source.html">thread.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af127a7a8c7edf5213f00ef95224f4740"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af127a7a8c7edf5213f00ef95224f4740"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#af127a7a8c7edf5213f00ef95224f4740">Thread_Pool</a> (std::string name, unsigned int)</td></tr>
-<tr class="memdesc:af127a7a8c7edf5213f00ef95224f4740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
-<tr class="separator:af127a7a8c7edf5213f00ef95224f4740"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7082c132632b0c2adf89d0c840382e0b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7082c132632b0c2adf89d0c840382e0b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a7082c132632b0c2adf89d0c840382e0b">~Thread_Pool</a> ()</td></tr>
-<tr class="memdesc:a7082c132632b0c2adf89d0c840382e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memitem:aef926ec2a1c76f58b243a4e3e89adace"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#aef926ec2a1c76f58b243a4e3e89adace">Thread_Pool</a> (std::string <a class="el" href="class_breaker_1_1_thread___pool.html#a5e26387bd49eda374a28709e59b4c338">name</a>, unsigned int <a class="el" href="class_breaker_1_1_thread___pool.html#a3151f90d53a72d3ebfd8e6d9d28d9b91">num_threads</a>)</td></tr>
+<tr class="memdesc:aef926ec2a1c76f58b243a4e3e89adace"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constructor.  <a href="#aef926ec2a1c76f58b243a4e3e89adace">More...</a><br /></td></tr>
+<tr class="separator:aef926ec2a1c76f58b243a4e3e89adace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7082c132632b0c2adf89d0c840382e0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a7082c132632b0c2adf89d0c840382e0b">~Thread_Pool</a> ()</td></tr>
+<tr class="memdesc:a7082c132632b0c2adf89d0c840382e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A destructor.  <a href="#a7082c132632b0c2adf89d0c840382e0b">More...</a><br /></td></tr>
 <tr class="separator:a7082c132632b0c2adf89d0c840382e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ae31d832c3eeea13cd698ee3f054734"><td class="memTemplParams" colspan="2"><a class="anchor" id="a3ae31d832c3eeea13cd698ee3f054734"></a>
-template&lt;typename Ret , typename... Args&gt; </td></tr>
+<tr class="memitem:a3ae31d832c3eeea13cd698ee3f054734"><td class="memTemplParams" colspan="2">template&lt;typename Ret , typename... Args&gt; </td></tr>
 <tr class="memitem:a3ae31d832c3eeea13cd698ee3f054734"><td class="memTemplItemLeft" align="right" valign="top">std::future&lt; Ret &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a3ae31d832c3eeea13cd698ee3f054734">async</a> (std::function&lt; Ret(Args...)&gt; f, Args...args)</td></tr>
-<tr class="memdesc:a3ae31d832c3eeea13cd698ee3f054734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start asynchronous thread. <br /></td></tr>
+<tr class="memdesc:a3ae31d832c3eeea13cd698ee3f054734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add asynchronous thread.  <a href="#a3ae31d832c3eeea13cd698ee3f054734">More...</a><br /></td></tr>
 <tr class="separator:a3ae31d832c3eeea13cd698ee3f054734"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeccd03bc3ae45a216fb022cfb4da848d"><td class="memTemplParams" colspan="2"><a class="anchor" id="aeccd03bc3ae45a216fb022cfb4da848d"></a>
-template&lt;typename Ret &gt; </td></tr>
-<tr class="memitem:aeccd03bc3ae45a216fb022cfb4da848d"><td class="memTemplItemLeft" align="right" valign="top">std::future&lt; Ret &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>async</b> (std::function&lt; Ret()&gt; f)</td></tr>
+<tr class="memitem:aeccd03bc3ae45a216fb022cfb4da848d"><td class="memTemplParams" colspan="2">template&lt;typename Ret &gt; </td></tr>
+<tr class="memitem:aeccd03bc3ae45a216fb022cfb4da848d"><td class="memTemplItemLeft" align="right" valign="top">std::future&lt; Ret &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#aeccd03bc3ae45a216fb022cfb4da848d">async</a> (std::function&lt; Ret()&gt; f)</td></tr>
+<tr class="memdesc:aeccd03bc3ae45a216fb022cfb4da848d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add asynchronous thread.  <a href="#aeccd03bc3ae45a216fb022cfb4da848d">More...</a><br /></td></tr>
 <tr class="separator:aeccd03bc3ae45a216fb022cfb4da848d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c4d2952ad9f0779eb373981544cb059"><td class="memTemplParams" colspan="2"><a class="anchor" id="a6c4d2952ad9f0779eb373981544cb059"></a>
-template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:a6c4d2952ad9f0779eb373981544cb059"><td class="memTemplItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>async</b> (std::function&lt; void(Args...)&gt; f, Args...args)</td></tr>
+<tr class="memitem:a6c4d2952ad9f0779eb373981544cb059"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a6c4d2952ad9f0779eb373981544cb059"><td class="memTemplItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a6c4d2952ad9f0779eb373981544cb059">async</a> (std::function&lt; void(Args...)&gt; f, Args...args)</td></tr>
+<tr class="memdesc:a6c4d2952ad9f0779eb373981544cb059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add asynchronous thread.  <a href="#a6c4d2952ad9f0779eb373981544cb059">More...</a><br /></td></tr>
 <tr class="separator:a6c4d2952ad9f0779eb373981544cb059"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b4302ccd5a3f0d7bbe4d21be42be0b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b4302ccd5a3f0d7bbe4d21be42be0b8"></a>
-std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>async</b> (std::function&lt; void()&gt; f)</td></tr>
+<tr class="memitem:a4b4302ccd5a3f0d7bbe4d21be42be0b8"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a4b4302ccd5a3f0d7bbe4d21be42be0b8">async</a> (std::function&lt; void()&gt; f)</td></tr>
+<tr class="memdesc:a4b4302ccd5a3f0d7bbe4d21be42be0b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add asynchronous thread.  <a href="#a4b4302ccd5a3f0d7bbe4d21be42be0b8">More...</a><br /></td></tr>
 <tr class="separator:a4b4302ccd5a3f0d7bbe4d21be42be0b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a286ccdb7a1f94610c4c932e67aaf1428"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a286ccdb7a1f94610c4c932e67aaf1428"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a286ccdb7a1f94610c4c932e67aaf1428">getName</a> ()</td></tr>
-<tr class="memdesc:a286ccdb7a1f94610c4c932e67aaf1428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get pool name. <br /></td></tr>
+<tr class="memitem:a286ccdb7a1f94610c4c932e67aaf1428"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a286ccdb7a1f94610c4c932e67aaf1428">getName</a> ()</td></tr>
+<tr class="memdesc:a286ccdb7a1f94610c4c932e67aaf1428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get this name.  <a href="#a286ccdb7a1f94610c4c932e67aaf1428">More...</a><br /></td></tr>
 <tr class="separator:a286ccdb7a1f94610c4c932e67aaf1428"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a2cc279acba059722db82685d43d09f58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2cc279acba059722db82685d43d09f58"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a2cc279acba059722db82685d43d09f58">thread_func</a> ()</td></tr>
-<tr class="memdesc:a2cc279acba059722db82685d43d09f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maintain until joined. <br /></td></tr>
+<tr class="memitem:a2cc279acba059722db82685d43d09f58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a2cc279acba059722db82685d43d09f58">thread_func</a> ()</td></tr>
+<tr class="memdesc:a2cc279acba059722db82685d43d09f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maintain threads.  <a href="#a2cc279acba059722db82685d43d09f58">More...</a><br /></td></tr>
 <tr class="separator:a2cc279acba059722db82685d43d09f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b8059960800b62080f672fcb6d977fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b8059960800b62080f672fcb6d977fb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a0b8059960800b62080f672fcb6d977fb">init_threads</a> ()</td></tr>
-<tr class="memdesc:a0b8059960800b62080f672fcb6d977fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize threads. <br /></td></tr>
+<tr class="memitem:a0b8059960800b62080f672fcb6d977fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a0b8059960800b62080f672fcb6d977fb">init_threads</a> ()</td></tr>
+<tr class="memdesc:a0b8059960800b62080f672fcb6d977fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize threads.  <a href="#a0b8059960800b62080f672fcb6d977fb">More...</a><br /></td></tr>
 <tr class="separator:a0b8059960800b62080f672fcb6d977fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa05608dcadc7d9e66c8bac863cfdfc9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#aa05608dcadc7d9e66c8bac863cfdfc9a">join</a> = false</td></tr>
+<tr class="memdesc:aa05608dcadc7d9e66c8bac863cfdfc9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Join boolean.  <a href="#aa05608dcadc7d9e66c8bac863cfdfc9a">More...</a><br /></td></tr>
+<tr class="separator:aa05608dcadc7d9e66c8bac863cfdfc9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e26387bd49eda374a28709e59b4c338"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a5e26387bd49eda374a28709e59b4c338">name</a></td></tr>
+<tr class="memdesc:a5e26387bd49eda374a28709e59b4c338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread pool name.  <a href="#a5e26387bd49eda374a28709e59b4c338">More...</a><br /></td></tr>
+<tr class="separator:a5e26387bd49eda374a28709e59b4c338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3151f90d53a72d3ebfd8e6d9d28d9b91"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a3151f90d53a72d3ebfd8e6d9d28d9b91">num_threads</a></td></tr>
+<tr class="memdesc:a3151f90d53a72d3ebfd8e6d9d28d9b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of threads.  <a href="#a3151f90d53a72d3ebfd8e6d9d28d9b91">More...</a><br /></td></tr>
+<tr class="separator:a3151f90d53a72d3ebfd8e6d9d28d9b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ef4624bed26529482ec46266137a5d"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#aa7ef4624bed26529482ec46266137a5d">task_mutex</a></td></tr>
+<tr class="memdesc:aa7ef4624bed26529482ec46266137a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task mutex.  <a href="#aa7ef4624bed26529482ec46266137a5d">More...</a><br /></td></tr>
+<tr class="separator:aa7ef4624bed26529482ec46266137a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad85b86c6cdf96277cd7760a56a80e756"><td class="memItemLeft" align="right" valign="top">std::deque&lt; std::future&lt; void &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#ad85b86c6cdf96277cd7760a56a80e756">tasks</a></td></tr>
+<tr class="memdesc:ad85b86c6cdf96277cd7760a56a80e756"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task list.  <a href="#ad85b86c6cdf96277cd7760a56a80e756">More...</a><br /></td></tr>
+<tr class="separator:ad85b86c6cdf96277cd7760a56a80e756"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b60e333525b1670fa763925578a5436"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::thread &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_thread___pool.html#a7b60e333525b1670fa763925578a5436">threads</a></td></tr>
+<tr class="memdesc:a7b60e333525b1670fa763925578a5436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread list.  <a href="#a7b60e333525b1670fa763925578a5436">More...</a><br /></td></tr>
+<tr class="separator:a7b60e333525b1670fa763925578a5436"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Thread pool. </p>
+<p>Creates and manipulates a pool of threads for multithreaded tasks. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aef926ec2a1c76f58b243a4e3e89adace"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Breaker::Thread_Pool::Thread_Pool </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>num_threads</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A constructor. </p>
+<p>Initializes the threads. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name of the thread pool. </td></tr>
+    <tr><td class="paramname">num_threads</td><td>Number of threads in the thread pool. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_breaker_1_1_thread___pool.html#a0b8059960800b62080f672fcb6d977fb" title="Initialize threads. ">init_threads()</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_thread___pool.html#aa7ef4624bed26529482ec46266137a5d" title="Task mutex. ">task_mutex</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7082c132632b0c2adf89d0c840382e0b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Breaker::Thread_Pool::~Thread_Pool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A destructor. </p>
+<p>Joins the threads and destroys the thread pool. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_breaker_1_1_thread___pool.html#aa05608dcadc7d9e66c8bac863cfdfc9a" title="Join boolean. ">join</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_thread___pool.html#a7b60e333525b1670fa763925578a5436" title="Thread list. ">threads</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_thread___pool.html#aa7ef4624bed26529482ec46266137a5d" title="Task mutex. ">task_mutex</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a3ae31d832c3eeea13cd698ee3f054734"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Ret , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt;Ret&gt; Breaker::Thread_Pool::async </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; Ret(Args...)&gt;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add asynchronous thread. </p>
+<p>Add an asynchronous thread to the thread pool and return a future. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Ret</td><td>Type to work with. </td></tr>
+    <tr><td class="paramname">Args</td><td>Variadic arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Function passed in for use by thread. </td></tr>
+    <tr><td class="paramname">args</td><td>Variadic arguments passed in. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_breaker_1_1_thread___pool.html#ad85b86c6cdf96277cd7760a56a80e756" title="Task list. ">tasks</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_thread___pool.html#aa7ef4624bed26529482ec46266137a5d" title="Task mutex. ">task_mutex</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The asynchronous future </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeccd03bc3ae45a216fb022cfb4da848d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Ret &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt;Ret&gt; Breaker::Thread_Pool::async </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; Ret()&gt;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add asynchronous thread. </p>
+<p>Add an asynchronous thread to the thread pool and return a future. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Ret</td><td>Type to work with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Function passed in for use by thread. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_breaker_1_1_thread___pool.html#ad85b86c6cdf96277cd7760a56a80e756" title="Task list. ">tasks</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_thread___pool.html#aa7ef4624bed26529482ec46266137a5d" title="Task mutex. ">task_mutex</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The asynchronous future </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6c4d2952ad9f0779eb373981544cb059"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt;void&gt; Breaker::Thread_Pool::async </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(Args...)&gt;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add asynchronous thread. </p>
+<p>Add an asynchronous thread to the thread pool and return a future. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Args</td><td>Variadic arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Function passed in for use by thread. </td></tr>
+    <tr><td class="paramname">args</td><td>Variadic arguments passed in. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_breaker_1_1_thread___pool.html#ad85b86c6cdf96277cd7760a56a80e756" title="Task list. ">tasks</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_thread___pool.html#aa7ef4624bed26529482ec46266137a5d" title="Task mutex. ">task_mutex</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The asynchronous future </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4b4302ccd5a3f0d7bbe4d21be42be0b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt; void &gt; Breaker::Thread_Pool::async </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add asynchronous thread. </p>
+<p>Add an asynchronous thread to the thread pool and return a future. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Function passed in for use by thread. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_breaker_1_1_thread___pool.html#ad85b86c6cdf96277cd7760a56a80e756" title="Task list. ">tasks</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_thread___pool.html#aa7ef4624bed26529482ec46266137a5d" title="Task mutex. ">task_mutex</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The asynchronous future </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a286ccdb7a1f94610c4c932e67aaf1428"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Breaker::Thread_Pool::getName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get this name. </p>
+<p>Get the pool thread's name. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_breaker_1_1_thread___pool.html#a5e26387bd49eda374a28709e59b4c338" title="Thread pool name. ">name</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The pool thread's name </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0b8059960800b62080f672fcb6d977fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Breaker::Thread_Pool::init_threads </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize threads. </p>
+<p>Put threads into a vector and initialize them. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_breaker_1_1_thread___pool.html#a2cc279acba059722db82685d43d09f58" title="Maintain threads. ">thread_func()</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_thread___pool.html#a3151f90d53a72d3ebfd8e6d9d28d9b91" title="Number of threads. ">num_threads</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_thread___pool.html#a7b60e333525b1670fa763925578a5436" title="Thread list. ">threads</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2cc279acba059722db82685d43d09f58"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Breaker::Thread_Pool::thread_func </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maintain threads. </p>
+<p>Maintain threads in a for loop until joined. </p><dl class="section see"><dt>See also</dt><dd>~Thread() </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_thread___pool.html#ad85b86c6cdf96277cd7760a56a80e756" title="Task list. ">tasks</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_thread___pool.html#aa7ef4624bed26529482ec46266137a5d" title="Task mutex. ">task_mutex</a> </dd>
+<dd>
+<a class="el" href="class_breaker_1_1_thread___pool.html#aa05608dcadc7d9e66c8bac863cfdfc9a" title="Join boolean. ">join</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa05608dcadc7d9e66c8bac863cfdfc9a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Breaker::Thread_Pool::join = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Join boolean. </p>
+<p>Boolean used to determine whether or not to join the threads. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5e26387bd49eda374a28709e59b4c338"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Breaker::Thread_Pool::name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Thread pool name. </p>
+<p>The thread pool name. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3151f90d53a72d3ebfd8e6d9d28d9b91"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Breaker::Thread_Pool::num_threads</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of threads. </p>
+<p>The number of threads in the thread pool. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa7ef4624bed26529482ec46266137a5d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex Breaker::Thread_Pool::task_mutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Task mutex. </p>
+<p>Locks the current thread and unlocks to prevent race conditions. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad85b86c6cdf96277cd7760a56a80e756"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::deque&lt;std::future&lt;void&gt; &gt; Breaker::Thread_Pool::tasks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Task list. </p>
+<p>List of tasks to execute across the threads in the thread pool. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7b60e333525b1670fa763925578a5436"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;std::thread&gt; Breaker::Thread_Pool::threads</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Thread list. </p>
+<p>List of threads in the thread pool </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/core/<a class="el" href="thread_8hpp_source.html">thread.hpp</a></li>
 <li>src/core/thread.cpp</li>
@@ -169,7 +658,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_breaker.html">Breaker</a></li><li class="navelem"><a class="el" href="class_breaker_1_1_thread___pool.html">Thread_Pool</a></li>
-    <li class="footer">Generated on Sat Mar 28 2015 01:38:16 for Breaker Engine by
+    <li class="footer">Generated on Sat Mar 28 2015 03:26:14 for Breaker Engine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

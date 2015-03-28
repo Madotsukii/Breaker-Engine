@@ -5,5 +5,7 @@ var class_directory =
     [ "getDirName", "class_directory.html#a279a8b1dc04b34dfe68f9e0a597670bd", null ],
     [ "getDirPath", "class_directory.html#aba95ac18874855e0adc2f9940fd54215", null ],
     [ "setDir", "class_directory.html#a051f3983339244255a8a1d3a5094d73c", null ],
-    [ "setDirFromRoot", "class_directory.html#a265489e698dec0663884d63db6f18acd", null ]
+    [ "setDirFromRoot", "class_directory.html#a265489e698dec0663884d63db6f18acd", null ],
+    [ "name", "class_directory.html#abd6e10cac0aff02156fc997967c9b830", null ],
+    [ "path", "class_directory.html#ab4d50c6409edddd9ccaad5cd87709457", null ]
 ];

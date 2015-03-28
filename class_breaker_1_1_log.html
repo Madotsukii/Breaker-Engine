@@ -111,6 +111,8 @@ $(document).ready(function(){initNavTree('class_breaker_1_1_log.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_breaker_1_1_log-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Breaker::Log Class Reference</div>  </div>
@@ -120,7 +122,7 @@ $(document).ready(function(){initNavTree('class_breaker_1_1_log.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a37ee5362f1b9c464ccdaddea83253766"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37ee5362f1b9c464ccdaddea83253766"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_log.html#a37ee5362f1b9c464ccdaddea83253766">Log</a> (std::string name, bool stream)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_log.html#a37ee5362f1b9c464ccdaddea83253766">Log</a> (std::string <a class="el" href="class_breaker_1_1_log.html#a93b74d5f931287f9c7c09ed738e9c376">name</a>, bool stream)</td></tr>
 <tr class="memdesc:a37ee5362f1b9c464ccdaddea83253766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
 <tr class="separator:a37ee5362f1b9c464ccdaddea83253766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fdb6ea858bfea87071d4cfe484ba6e9"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
@@ -148,8 +150,30 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aed7f56d0de8e4e1877b8a7c0518bbd85"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_log.html#aed7f56d0de8e4e1877b8a7c0518bbd85">loop</a> (<a class="el" href="class_breaker_1_1_log.html">Breaker::Log</a> log)</td></tr>
+<tr class="memitem:aed7f56d0de8e4e1877b8a7c0518bbd85"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_log.html#aed7f56d0de8e4e1877b8a7c0518bbd85">loop</a> (<a class="el" href="class_breaker_1_1_log.html">Breaker::Log</a> <a class="el" href="class_breaker_1_1_log.html#a98c22662330d036f955a310584f6dcdd">log</a>)</td></tr>
 <tr class="separator:aed7f56d0de8e4e1877b8a7c0518bbd85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a435f036ce4d1ce39dc032ddbb4bffdf6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a435f036ce4d1ce39dc032ddbb4bffdf6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_log.html#a435f036ce4d1ce39dc032ddbb4bffdf6">append</a> ()</td></tr>
+<tr class="memdesc:a435f036ce4d1ce39dc032ddbb4bffdf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append content to log file. <br /></td></tr>
+<tr class="separator:a435f036ce4d1ce39dc032ddbb4bffdf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a98c22662330d036f955a310584f6dcdd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98c22662330d036f955a310584f6dcdd"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_log.html#a98c22662330d036f955a310584f6dcdd">log</a></td></tr>
+<tr class="memdesc:a98c22662330d036f955a310584f6dcdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contents of the log. <br /></td></tr>
+<tr class="separator:a98c22662330d036f955a310584f6dcdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93b74d5f931287f9c7c09ed738e9c376"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93b74d5f931287f9c7c09ed738e9c376"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_log.html#a93b74d5f931287f9c7c09ed738e9c376">name</a></td></tr>
+<tr class="memdesc:a93b74d5f931287f9c7c09ed738e9c376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the log. <br /></td></tr>
+<tr class="separator:a93b74d5f931287f9c7c09ed738e9c376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7918e94fa39cb70b0adc0dac864989c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7918e94fa39cb70b0adc0dac864989c2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_breaker_1_1_log.html#a7918e94fa39cb70b0adc0dac864989c2">streamToFile</a></td></tr>
+<tr class="memdesc:a7918e94fa39cb70b0adc0dac864989c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to file? <br /></td></tr>
+<tr class="separator:a7918e94fa39cb70b0adc0dac864989c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a4fdb6ea858bfea87071d4cfe484ba6e9"></a>
@@ -311,7 +335,7 @@ template&lt;typename... Args&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_breaker.html">Breaker</a></li><li class="navelem"><a class="el" href="class_breaker_1_1_log.html">Log</a></li>
-    <li class="footer">Generated on Sat Mar 28 2015 01:38:16 for Breaker Engine by
+    <li class="footer">Generated on Sat Mar 28 2015 03:26:14 for Breaker Engine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>
