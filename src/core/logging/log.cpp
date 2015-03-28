@@ -25,28 +25,28 @@ the following restrictions:
 // Log
 // Public
 Breaker::Log::Log(std::string _name, bool stream) : name(_name),
-	streamToFile(stream)
+    streamToFile(stream)
 {
-	//TODO: If streaming, then stream to file on another thread
-	//logFile.setFileFromRoot("/log/" name ".log");
-	
-	add("->[", getName(), "]<- log created");
+    //TODO: If streaming, then stream to file on another thread
+    //logFile.setFileFromRoot("/log/" name ".log");
+
+    add("->[", getName(), "]<- log created");
 }
 
 void Breaker::Log::write()
 {
-	add("Writing system log to [insert file path here]");
-	//TODO: Write to file and insert file path to the above
+    add("Writing system log to [insert file path here]");
+    //TODO: Write to file and insert file path to the above
 }
 
 std::vector<std::string> Breaker::Log::getLog()
 {
-	return log;
+    return log;
 }
 
 std::string Breaker::Log::getName()
 {
-	return name;
+    return name;
 }
 
 /*Breaker::File Breaker::Log::getFile()
@@ -57,5 +57,5 @@ std::string Breaker::Log::getName()
 // Private
 void Breaker::Log::append()
 {
-	//TODO: Append to file
+    //TODO: Append to file
 }

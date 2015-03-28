@@ -26,38 +26,38 @@ the following restrictions:
 
 Directory::Directory()
 {
-	// GNU/Linux specific code
-	#ifdef __gnu_linux__
-	
-	#endif
-	
-	// Windows specific code
-	#ifdef _WIN32
-	
-	#endif
+    // GNU/Linux specific code
+#ifdef __gnu_linux__
+
+#endif
+
+    // Windows specific code
+#ifdef _WIN32
+
+#endif
 }
 
 std::string Directory::getDirPath()
 {
-	return "";
+    return "";
 }
 
 std::string Directory::getDirName()
 {
-	return "";
+    return "";
 }
 
 std::string Directory::setDir(std::string path)
 {
-	return "";
+    return "";
 }
 
 std::string Directory::setDirFromRoot(std::string path)
 {
-	return "";
+    return "";
 }
 
 bool Directory::exists()
 {
-	return false;
+    return false;
 }

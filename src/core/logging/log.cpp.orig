@@ -20,35 +20,42 @@ the following restrictions:
 	3. This notice may not be removed or altered from any source distribution.
 */
 
-/* Directory manipulation */
+#include "log.hpp"
 
-#ifndef DIRECTORY_H
-#define DIRECTORY_H
-
-#include <string>
-
-// Directory class, a container for information relating to said directory
-class Directory
+// Log
+// Public
+Breaker::Log::Log(std::string _name, bool stream) : name(_name),
+	streamToFile(stream)
 {
-public:
-    Directory();									// Finds and sets default
-    // path (engine root)
+	//TODO: If streaming, then stream to file on another thread
+	//logFile.setFileFromRoot("/log/" name ".log");
+	
+	add("->[", getName(), "]<- log created");
+}
 
-    std::string getDirPath();						// Get directory path
-    std::string getDirName();						// Get directory name
+void Breaker::Log::write()
+{
+	add("Writing system log to [insert file path here]");
+	//TODO: Write to file and insert file path to the above
+}
 
-    std::string setDir(std::string path);			/* Find and set directory
-													from current directory */
-    std::string setDirFromRoot(std::string path);	/* Find and set directory
-													from (engine) root */
+std::vector<std::string> Breaker::Log::getLog()
+{
+	return log;
+}
 
-    bool exists();									// Check if directory exists
+std::string Breaker::Log::getName()
+{
+	return name;
+}
 
+/*Breaker::File Breaker::Log::getFile()
+{
+	return file;
+}*/
 
-
-private:
-    std::string path;
-    std::string name;
-};
-
-#endif // DIRECTORY_H
+// Private
+void Breaker::Log::append()
+{
+	//TODO: Append to file
+}

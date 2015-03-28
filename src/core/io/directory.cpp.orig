@@ -20,35 +20,44 @@ the following restrictions:
 	3. This notice may not be removed or altered from any source distribution.
 */
 
-/* Directory manipulation */
+#include <dirent.h>
 
-#ifndef DIRECTORY_H
-#define DIRECTORY_H
+#include "directory.hpp"
 
-#include <string>
-
-// Directory class, a container for information relating to said directory
-class Directory
+Directory::Directory()
 {
-public:
-    Directory();									// Finds and sets default
-    // path (engine root)
+	// GNU/Linux specific code
+	#ifdef __gnu_linux__
+	
+	#endif
+	
+	// Windows specific code
+	#ifdef _WIN32
+	
+	#endif
+}
 
-    std::string getDirPath();						// Get directory path
-    std::string getDirName();						// Get directory name
+std::string Directory::getDirPath()
+{
+	return "";
+}
 
-    std::string setDir(std::string path);			/* Find and set directory
-													from current directory */
-    std::string setDirFromRoot(std::string path);	/* Find and set directory
-													from (engine) root */
+std::string Directory::getDirName()
+{
+	return "";
+}
 
-    bool exists();									// Check if directory exists
+std::string Directory::setDir(std::string path)
+{
+	return "";
+}
 
+std::string Directory::setDirFromRoot(std::string path)
+{
+	return "";
+}
 
-
-private:
-    std::string path;
-    std::string name;
-};
-
-#endif // DIRECTORY_H
+bool Directory::exists()
+{
+	return false;
+}

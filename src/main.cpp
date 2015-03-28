@@ -33,48 +33,48 @@ Breaker::Log systemLog("System", false);
 //Entry point, decides what to do and does it
 int main(int argc, char** argv)
 {
-	// Initialize threaded classes
-	log_pool.async(std::function<void(Breaker::Log)>(systemLog.loop), systemLog);
-	//log_pool.async(std::function<void(Breaker::Log)>(testLog.loop), testLog);
-	
-	//TODO: Open README.md and store in (string)variable
-	//Get passed-in arguments and decide what to do based off of them
-	for (int i = 0; i < argc; ++i)
-	{
-		//Prints README.md and general/command information
-		if (std::string(argv[i]) == "-h" || std::string(argv[i]) == "--help")
-		{
-			//TODO: Print out README.md
-			systemLog.add(false, "Usage: BreakerEngine [OPTIONS]\n\n",
-				"Option	Long option	Meaning\n",
-				" -h	--help		Show this message and exits\n",
-				" -v	--version	Prints the executable version and exits");
-			
-			//TODO: Make exception system later to exit
-		}
-		//Prints the program version
-		else if (std::string(argv[i]) == "-v" ||
-			std::string(argv[i]) == "--version")
-		{
-			systemLog.add(false, "Breaker Engine v",
-				BreakerEngine_VERSION_MAJOR, ".", BreakerEngine_VERSION_MINOR);
-			
-			//TODO: Make exception system later to exit
-		}
-	}
-	
-	//Implement settings file at some point
-	//Window window(800, 600, "Breaker Engine");
-	//RenderingEngine renderer(window);
-	
-	//CoreEngine engine(60, &window, &renderer, &game);
-	//engine.start();
-	//
-	//Implement Unit Tests?
-	
-	//Implement (if)error later
-	
-	systemLog.add("Destroying thread pool ->[", log_pool.getName(), "]<-");
-		// TODO: Put clean up method in exception system
-	return 0;
+    // Initialize threaded classes
+    log_pool.async(std::function<void(Breaker::Log)>(systemLog.loop), systemLog);
+    //log_pool.async(std::function<void(Breaker::Log)>(testLog.loop), testLog);
+
+    //TODO: Open README.md and store in (string)variable
+    //Get passed-in arguments and decide what to do based off of them
+    for (int i = 0; i < argc; ++i)
+    {
+        //Prints README.md and general/command information
+        if (std::string(argv[i]) == "-h" || std::string(argv[i]) == "--help")
+        {
+            //TODO: Print out README.md
+            systemLog.add(false, "Usage: BreakerEngine [OPTIONS]\n\n",
+                          "Option	Long option	Meaning\n",
+                          " -h	--help		Show this message and exits\n",
+                          " -v	--version	Prints the executable version and exits");
+
+            //TODO: Make exception system later to exit
+        }
+        //Prints the program version
+        else if (std::string(argv[i]) == "-v" ||
+                 std::string(argv[i]) == "--version")
+        {
+            systemLog.add(false, "Breaker Engine v",
+                          BreakerEngine_VERSION_MAJOR, ".", BreakerEngine_VERSION_MINOR);
+
+            //TODO: Make exception system later to exit
+        }
+    }
+
+    //Implement settings file at some point
+    //Window window(800, 600, "Breaker Engine");
+    //RenderingEngine renderer(window);
+
+    //CoreEngine engine(60, &window, &renderer, &game);
+    //engine.start();
+    //
+    //Implement Unit Tests?
+
+    //Implement (if)error later
+
+    systemLog.add("Destroying thread pool ->[", log_pool.getName(), "]<-");
+    // TODO: Put clean up method in exception system
+    return 0;
 }
